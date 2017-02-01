@@ -1,0 +1,33 @@
+insert into main_slider values(1,'images/5.jpg');
+insert into main_slider values(2,'images/9.jpg');
+insert into main_slider values(3,'images/3.jpg');
+insert into main_slider values(4,'images/7.jpg');
+
+create table admin(
+	username varchar(20) not null,
+	password varchar(100) not null,
+	primary key(username)
+);
+
+insert into admin values('admin','$2y$09$sAEQLDE0GPYUAiRcKPluBOLKUBLin9z3HwAaVUgu2TZzSb3o/afcu')
+
+create table my_trip
+(
+	trip_id int not null auto_increment,
+	trip_name varchar(50) not null,
+	destination varchar(50) not null,
+	img_album varchar(80),
+	main_image varchar(80),
+	client_data varchar(200),
+	client_feedback varchar(200),
+	description varchar(200),
+	latitude double,
+	longitude double,
+	primary key(trip_id)
+);
+
+insert into my_trip values(1,'Polonnaruwa trip','Polonnaruwa','trips/polonnaruwa','trips/polonnaruwa/14.jpg','France tourists','Good tour','trip went on 2015-11-07',6.3455,5.2324);
+
+insert into my_trip values(2,'Anuradhapura trip','Anuradhapura','trips/anuradhapura','trips/anuradhapura/1.jpg','France tourists','Good tour','trip went on 2015-11-07',6.3455,5.2324);
+
+insert into my_trip values(3,'Kandy trip','Kandy','trips/kandy','trips/kandy/8.jpg','France tourists','Good tour','trip went on 2015-11-07',6.3455,5.2324);
