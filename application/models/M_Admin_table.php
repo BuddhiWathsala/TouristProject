@@ -16,8 +16,17 @@ class M_Admin_table extends CI_Model {
     {
       return null;
     }
+  }//end validate
+
+  public function getContactDetails()
+  {
+    $this->load->database();
+    $query = "SELECT * FROM admin WHERE username="."'admin'";
+    $results = $this->db->query($query);
+
+    return ($results->result());
   }
 
 
 
-}
+}//end M_Admin_table

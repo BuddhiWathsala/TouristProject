@@ -31,3 +31,43 @@ insert into my_trip values(1,'Polonnaruwa trip','Polonnaruwa','trips/polonnaruwa
 insert into my_trip values(2,'Anuradhapura trip','Anuradhapura','trips/anuradhapura','trips/anuradhapura/1.jpg','France tourists','Good tour','trip went on 2015-11-07',6.3455,5.2324);
 
 insert into my_trip values(3,'Kandy trip','Kandy','trips/kandy','trips/kandy/8.jpg','France tourists','Good tour','trip went on 2015-11-07',6.3455,5.2324);
+
+create table places(
+	place_id int not null auto_increment,
+	place_name varchar(50) not null,
+	description varchar(500),
+	special_places varchar(300),
+	main_image varchar(50),
+	image_album varchar(50),
+	primary key(place_id)
+);
+
+insert into places values(1,'Anuradhapura','It is the capital city of North Central Province, Sri Lanka and the capital of Anuradhapura District. Anuradhapura is one of the ancient capitals of Sri Lanka, famous for its well-preserved ruins of an ancient Sri Lankan civilization. It was the third capital of the Kingdom of Rajarata, following the kingdoms of Tambapanni and Upatissa Nuwara.
+
+The city, now a UNESCO World Heritage Site, was the center of Theravada Buddhism for many centuries. The city lies 205 km (127 mi) north of the current capital Colombo in Sri Lankas North Central Province, on the banks of the historic Malvathu Oya. It is one of the oldest continuously inhabited cities in the world and one of the eight World Heritage Sites of Sri Lanka.
+
+It is believed that from the fourth century BC until the beginning of the 11th century AD it was the capital of the Sinhalese. During this period it remained one of the most stable and durable centers of political power and urban life in South Asia. The ancient city, considered sacred to the Buddhist world, is today surrounded by monasteries covering an area of over sixteen square miles (40 km²).','Jaya Sri Maha Bodhi,Ruwanwelisaya,Thuparamaya,Lovamahapaya','places/anuradhapura/1.jpg','places/anuradhapura');
+
+insert into places values(2,'Polonnaruwa','The second most ancient of Sri Lankas kingdoms, Polonnaruwa was first declared the capital city by King Vijayabahu I, who defeated Chola invaders in 1070 to reunite the country once more under a local leader.
+
+The Ancient City of Polonnaruwa has been declared a World Heritage Site.[1]
+
+Currently the new Polonnaruwa is undergoing a major development project known as the "Awakening of Polonnaruwa" under the concept of President Maithripala Sirisena. It envisions the development of all sectors in Polonnaruwa including roads, electricity, agriculture, education, health and environment will be developed comprehensively','Statue of King Parakramabahu,Council Chamber,Kumara Pokuna','places/polonnaruwa/14.jpg','places/polonnaruwa');
+
+alter table admin add column telephone int(10);
+
+update admin set email='b.wathsala.bw@gmail.com',telephone=0776652085 where username='admin';
+
+alter table places add column latitude double;
+update places set latitude=7.940338,longitude=81.018798 where place_id=2;
+
+create table todo(
+	id int auto_increment not null,
+	name varchar(50) not null,
+	image_path varchar(80),
+	main_image varchar(150),
+	primary key(id)
+);
+ insert into todo values(1,'Diving','todo/diving','todo/diving/panicked-diver-scuba-diving_0.jpg');
+ insert into todo values(2,'Hiking','todo/hiking','todo/hiking/635693880042525992-518822648_couple-hiking-valley.jpg');
+ insert into todo values(3,'Surfing','todo/surfing','todo/surfing/maxresdefault.jpg');
